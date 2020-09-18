@@ -77,8 +77,8 @@ public class checkWebDriver {
     }
 
     //discuss with the team about all the assertions
-    public void assertion1() {}
+    private void assertion1() {}
 
-    public void assertion2() {}
+    private void assertion2() {}
 
 }
