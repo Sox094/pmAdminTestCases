@@ -2,33 +2,31 @@ package Settings;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import Helper.Browser;
 import org.testng.annotations.Test;
 
-public class Settings {
+public class Settings extends Browser{
 
-    public void setupSettings() {
-        //WebDriver associated with chrome
-        WebDriver browser;
-        browser = new ChromeDriver();
-
-        String baseUrl = "http://localhost:8080/";
-
-        //open chrome at the current url baseUrl
-        browser.get(baseUrl);
-
-        //maximize the window
-        browser.manage().window().maximize();
-
-        //retrieve h3 title
-        String title = "";
-        title = browser.findElement(By.tagName("h3")).getText();
-        System.out.println(title);
-
+    @Test
+    public void testSettings() {
+        initialization();
+        precondition();
+        assertion1();
+        waitFor(3000);
+        closeBrowser();
     }
 
-    //@Test
-    public void SettingsTest() {
+    private void assertion1() {
+    }
 
+    private void precondition() {
+        //go to the settings tab
+        openSettingsPage();
+    }
+
+    private void initialization() {
+        setUp();
     }
 }
